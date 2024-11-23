@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTech University Navbar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        ::selection {
+            background-color: #700F1A;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #700F1A;
+            position: sticky;
+            text-transform: uppercase;
+        }
+
+        .navbar-nav .nav-link,
+        .navbar-nav .dropdown-toggle {
+            color: white;
+            background-color: #700F1A;
+
+
+        }
+
+        .navbar-nav .dropdown-item {
+            color: white;
+            background-color: #700F1A;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: #330710;
+
+        }
+
+        .navbar-nav .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+
+        .dropdown-submenu:hover .dropdown-menu,
+        .dropdown-submenu:focus-within .dropdown-menu {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-submenu .dropdown-menu {
+                display: none;
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .dropdown-submenu:hover .dropdown-menu,
+            .dropdown-submenu:focus-within .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+        }
+
+        .navbar-nav.ms-auto {
+            margin-left: auto;
+        }
+
+        .navbar-brand img {
+            height: 10vh;
+            width: auto;
+        }
+
+        .apply-btn {
+            background-color: #700F1A;
+            color: #700F1A;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+            border: 2px solid white;
+            text-decoration: none;
+        }
+
+        .apply-btn:hover {
+            background-color: white;
+            border: 2px solid white;
+            color: #700F1A;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #700F1A;
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: black;
+        }
+
+        .footer-logo {
+            height: 80px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: black;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            padding-top: 20px;
+        }
+
+        #em-phone {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .team-header {
+            position: sticky;
+            background: url('itu.png') center center/cover no-repeat;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .team-header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0.1, 0.5, 0.6, 0.6);
+        }
+
+        .team-header h1 {
+            z-index: 1;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+            margin-top: 20vh;
+        }
+
+        .team-header p {
+            z-index: 1;
+            font-size: 1.2rem;
+        }
+
+
+        @media (max-width: 1200px) {
+            .team-header h1 {
+                font-size: 3rem;
+                margin-top: 15vh;
+            }
+
+            .team-header p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .team-header {
+                height: 300px;
+            }
+
+            .team-header h1 {
+                font-size: 2.5rem;
+                margin-top: 10vh;
+            }
+
+            .team-header p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-header {
+                height: 250px;
+            }
+
+            .team-header h1 {
+                font-size: 2rem;
+                margin-top: 8vh;
+            }
+
+            .team-header p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .team-header {
+                height: 200px;
+            }
+
+            .team-header h1 {
+                font-size: 1.5rem;
+                margin-top: 5vh;
+            }
+
+            .team-header p {
+                font-size: 0.85rem;
+            }
+        }
+
+        .about-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+
+        .about-section h2 {
+            color: #333;
+            font-weight: 700;
+        }
+
+        .about-section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight-text {
+            color: #627C01;
+        }
+
+        .highlight-background {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        @media (max-width: 991px) {
+            .about-section {
+                text-align: center;
+            }
+
+            .about-image {
+                margin-top: 20px;
+            }
+        }
+
+        #about-h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4C6502;
+            margin-bottom: 20px;
+        }
+
+        #about-p {
+            font-size: 1.rem;
+            color: #700F1A;
+            text-align: justify;
+            padding-right: 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .section-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-block {
+            flex: 1;
+        }
+
+        .image-block {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .section-content {
+                flex-direction: column;
+            }
+        }
+
+        .about-section {
+            background-color: #f8f9fa;
+        }
+
+        .vc-section {
+            background-color: #e9ecef;
+        }
+
+        .provc-section {
+            background-color: rgb(182, 179, 179);
+
+        }
+
+        .mission-section {
+            background-color: rgb(182, 179, 179);
+
+        }
+
+        .vision-section {
+            background-color: #b5babe80;
+        }
+
+        .card-section {
+            padding: 60px 0;
+        }
+
+        .card-custom {
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-custom::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0.5, 0.5, 0.5, 0.6);
+            z-index: 1;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            margin-top: 20px;
+            background-color: #700F1A;
+            color: white;
+            font-weight: 600;
+            border: 1px solid white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: white;
+            border: 1px solid white;
+            color: #700F1A;
+        }
+
+        .card-description {
+            margin-top: 15px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="iTech University">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="iTech University.html">iTech University</a></li>
+                            <li><a class="dropdown-item" href="Faculty.html">Faculty</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle"
+                                    href="Undergraduate Programs.html">Undergraduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="bs-cs.html">BS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-ai.html">BS Artificial Intelligence</a></li>
+                                    <li><a class="dropdown-item" href="bs-it.html">BS Information Technology</a></li>
+                                    <li><a class="dropdown-item" href="bs-ds.html">BS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-swe.html">BS Software Engineering</a></li>
+                                    <li><a class="dropdown-item" href="bs-cyber.html">BS Cyber Security</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Masters Programs.html">Masters</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ms-cs.html">MS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-ds.html">MS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-it.html">MS Information Technology</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Ph.D Programs.html">PhD</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="phd-cs.html">PhD Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-ds.html">PhD Data Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-it.html">PhD Information Technology</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admissions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                            <li><a class="dropdown-item" href="Undergraduate Programs.html">Undergraduate</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Masters Programs.html">Masters</a></li>
+                            <li><a class="dropdown-item" href="Ph.D Programs.html">PhD</a></li>
+                            <li><a class="dropdown-item" href="Fees Structure.html">Fee Structure</a></li>
+                            <li><a class="dropdown-item" href="Admission Policy.html">Admission Policy</a></li>
+                            <li><a class="dropdown-item" href="Admission form.html">Apply Online</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Careers
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Jobs.html">Job Openings</a></li>
+                            <li><a class="dropdown-item" href="Internships.html">Internships</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            News & Events
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Events.html">Events</a></li>
+                            <li><a class="dropdown-item" href="Blogs.html">Blogs</a></li>
+                            <li><a class="dropdown-item" href="Gallery.html">Gallery</a></li>
+                            <li><a class="dropdown-item" href="FAQs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact Us.html">Contact</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Admission form.html" class="nav-link apply-btn">Apply Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="team-header text-white text-center">
+        <div class="overlay">
+            <div class="container" id="overlay-div">
+                <h1>Welcome to iTech University</h1>
+                <p>Discover affordable excellence in education with the iTech University fee structure.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <h2 id="about-h2">About iTech University</h2>
+                    <p id="about-p">
+                        Welcome to ITech University, where we empower the next
+                        generation of innovators, technologists, and leaders. With a focus on cutting-edge technology,
+                        our institution offers world-class education in Computer Science, Artificial Intelligence,
+                        Information Technology, and many more emerging fields.
+                    </p>
+                    <p id="about-p">
+                        At ITech University, we believe in a hands-on approach to learning, with modern laboratories,
+                        industry-experienced faculty, and a strong emphasis on research and development. Our goal is to
+                        ensure students graduate with not only theoretical knowledge but also practical skills that
+                        meet industry demands.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-12 about-image">
+                    <img src="itu1.jpg" alt="ITech University Campus">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="vc-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="">
+                    <img src="VC_.png" alt="VC Image"
+                        style="height: 400px; border-radius: 50%; border: 1px solid black;">
+                </div>
+                <div class="text-block">
+                    <h2 id="about-h2">Chancellor's Message</h2>
+                    <p id="about-p">
+                        At ITech University, we are committed to creating a thriving learning environment that fosters
+                        creativity,
+                        innovation, and leadership in the world of technology. Our vision is to bridge the gap between
+                        academia
+                        and the evolving demands of the tech industry.
+                    </p>
+                    <p id="about-p"><strong>Dr. Partab Saathi </strong> ,Chancellor, iTech University</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr style="height: 1%; padding: 0; margin: 0;">
+
+    <section class="provc-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="text-block">
+                    <h2 id="about-h2">Vice Chancellor's Message</h2>
+                    <p id="about-p">
+                        At ITech University, we are dedicated to cultivating a dynamic learning environment that
+                        nurtures creativity, drives innovation, and shapes future leaders in the ever-evolving field of
+                        technology. Our mission is to bridge the divide between academic excellence and the rapidly
+                        changing demands of the tech industry, ensuring our graduates are equipped with the skills and
+                        knowledge necessary to thrive in a global landscape.
+                    </p>
+                    <p id="about-p"><strong>Dr. Partab Rai </strong> ,Vice-Chancellor, iTech University</p>
+                </div>
+                <div class="">
+                    <img src="pvc.jpg" alt="VC Image"
+                        style="height: 400px; border-radius: 50%; border: 1px solid black;">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr style="height: 1%; padding: 0; margin: 0;">
+
+    <section class="vc-section">
+        <div class="container">
+            <div class="section-content">
+                <div class:"">
+                    <img src="new.png" alt="VC Image"
+                        style="height: 400px; border-radius: 50%; border: 1px solid black;">
+
+                </div>
+                <div class="text-block">
+                    <h2 id="about-h2">Pro Vice-Chancellor</h2>
+                    <p id="about-p">
+                        At ITech University, we are focused on building a vibrant learning environment that encourages
+                        creativity, innovation, and leadership in the technology sector. Our goal is to close the gap
+                        between academic rigor and the fast-paced demands of the tech industry, preparing our students
+                        to excel in their careers and lead in the digital age.
+                    </p>
+                    <p id="about-p"><strong>Dr. Rudra Partab Singh </strong> , Pro Vice-Chancellor, iTech University</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="mission-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="text-block">
+                    <h2 id="about-h2">Our Mission</h2>
+                    <p id="about-p">
+                        Our mission is to provide world-class education and research opportunities in information
+                        technology,
+                        empowering students with the skills and knowledge needed to shape the future. We are dedicated
+                        to fostering
+                        a diverse and inclusive environment that nurtures creativity, innovation, and leadership.
+                    </p>
+                </div>
+                <div class="">
+                    <img src="itumission.webp" alt="Mission Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vision-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="image-block">
+                    <img src="ourvision.avif" alt="Vision Image">
+                </div>
+                <div class="text-block">
+                    <h2 id="about-h2">Our Vision</h2>
+                    <p id="about-p">
+                        We aim to be a leading institution in the field of technology, setting the highest standards of
+                        education and research.
+                        Our vision is to empower our graduates to drive innovation and create a global impact in the
+                        rapidly evolving tech industry.
+                    </p>
+                    <p id="about-p">
+                        Through innovative research and strong industry collaboration, we strive to contribute to
+                        technological advancements that benefit society.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="card-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-custom" style="background-image: url('undergraduate\ programs.png');">
+                        <div class="card-content">
+                            <i class="fas fa-graduation-cap icon"></i>
+                            <h3 class="card-title">Undergraduate</h3>
+                            <a href="Undergraduate Programs.html" class="btn btn-custom">Learn More</a>
+                            <p class="card-description">Providing a strong foundation with undergraduate programs that
+                                equip students with essential skills and knowledge for their careers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-custom" style="background-image: url('masters.png');">
+                        <div class="card-content">
+                            <i class="fas fa-user-graduate icon"></i>
+                            <h3 class="card-title">Masters</h3>
+                            <a href="Masters Programs.html" class="btn btn-custom">Learn More</a>
+                            <p class="card-description">Advancing expertise with master's programs designed to deepen
+                                understanding and foster specialization in key fields.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-custom" style="background-image: url('Phd.png');">
+                        <div class="card-content">
+                            <i class="fas fa-university icon"></i>
+                            <h3 class="card-title">Ph.D</h3>
+                            <a href="Ph.D Programs.html" class="btn btn-custom">Learn More</a>
+                            <p class="card-description">Leading cutting-edge research through PhD programs that empower
+                                scholars to contribute original insights to their disciplines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Logo and Bio -->
+                <div class="col-md-5">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="logo.png" alt="iTech University" class="footer-logo">
+                    </a>
+                    <p class="mt-3">iTech University is dedicated to excellence in teaching, learning, and research, and
+                        to developing leaders in numerous disciplines who make a difference globally.</p>
+                </div>
+
+                <div class="col-md-3 text-center footer-contact">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <p><i class="fas fa-map-marker-alt mt-2 pl-2"></i> iTech University Blue Area <br>Islamabad
+                        Punjab, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@itechuniversity.com</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase text-center">Subscribe to our Newsletter</h5>
+                    <form class="d-flex flex-column">
+                        <input type="email" class="form-control mb-2" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-outline-light">Subscribe</button>
+                    </form>
+                    <h5 class="mt-4 text-uppcercase text-center">Follow Us</h5>
+                    <div class="social-icons text-center">
+                        <a href="www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2 footer-links">
+                <div class="col-md-12 text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="iTech University.html">About Us</a> |
+                    <a href="Undergraduate Programs.html">Undergraduate</a> |
+                    <a href="Masters Programs.html">Masters</a> |
+                    <a href="Ph.D Programs.html">Ph.D</a> |
+                    <a href="Contact Us.html">Contact Us</a> |
+                    <a href="Admission form.html">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p> Copyright &copy; 2024 iTech University. <br>All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const dropdownItems = document.querySelectorAll('.dropdown-submenu > a');
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const nextDropdown = this.nextElementSibling;
+                if (nextDropdown) {
+                    nextDropdown.classList.toggle('show');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
