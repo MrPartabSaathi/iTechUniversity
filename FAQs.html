@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTech University Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        ::selection {
+            background-color: #700F1A;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #700F1A;
+            position: sticky;
+            text-transform: uppercase;
+        }
+
+        .navbar-nav .nav-link,
+        .navbar-nav .dropdown-toggle {
+            color: white;
+            background-color: #700F1A;
+
+
+        }
+
+        .navbar-nav .dropdown-item {
+            color: white;
+            background-color: #700F1A;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: #330710;
+
+        }
+
+        .navbar-nav .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+
+        .dropdown-submenu:hover .dropdown-menu,
+        .dropdown-submenu:focus-within .dropdown-menu {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-submenu .dropdown-menu {
+                display: none;
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .dropdown-submenu:hover .dropdown-menu,
+            .dropdown-submenu:focus-within .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+        }
+
+        .navbar-nav.ms-auto {
+            margin-left: auto;
+        }
+
+        .navbar-brand img {
+            height: 10vh;
+            width: auto;
+        }
+
+        .apply-btn {
+            background-color: #700F1A;
+            color: #700F1A;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+            border: 2px solid white;
+            text-decoration: none;
+        }
+
+        .apply-btn:hover {
+            background-color: white;
+            border: 2px solid white;
+            color: #700F1A;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #700F1A;
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: black;
+        }
+
+        .footer-logo {
+            height: 80px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: black;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            padding-top: 20px;
+        }
+
+        #em-phone {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .team-header {
+            position: sticky;
+            background: url('itu.png') center center/cover no-repeat;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .team-header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .team-header h1 {
+            z-index: 1;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+            margin-top: 20vh;
+        }
+
+        .team-header p {
+            z-index: 1;
+            font-size: 1.2rem;
+        }
+
+
+        @media (max-width: 1200px) {
+            .team-header h1 {
+                font-size: 3rem;
+                margin-top: 15vh;
+            }
+
+            .team-header p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .team-header {
+                height: 300px;
+            }
+
+            .team-header h1 {
+                font-size: 2.5rem;
+                margin-top: 10vh;
+            }
+
+            .team-header p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-header {
+                height: 250px;
+            }
+
+            .team-header h1 {
+                font-size: 2rem;
+                margin-top: 8vh;
+            }
+
+            .team-header p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .team-header {
+                height: 200px;
+            }
+
+            .team-header h1 {
+                font-size: 1.5rem;
+                margin-top: 5vh;
+            }
+
+            .team-header p {
+                font-size: 0.85rem;
+            }
+        }
+
+
+        .faq-section {
+            background-color: #fff;
+            padding: 40px;
+            margin-top: 20px;
+            border-radius: 8px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 8px rgba(0.5, 0.5, 0.5, 0.5);
+            border-top: 1px solid black;
+
+        }
+
+        .faq-question {
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #700F1A;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #700F1A;
+            color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            border-left: 4px solid #700F1A;
+            background-color: #f8f9fa;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-header h1 {
+            font-size: 2.5rem;
+            color: #700F1A;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="iTech University">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="iTech University.html">iTech University</a></li>
+                            <li><a class="dropdown-item" href="Faculty.html">Faculty</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle"
+                                    href="Undergraduate Programs.html">Undergraduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="bs-cs.html">BS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-ai.html">BS Artificial Intelligence</a></li>
+                                    <li><a class="dropdown-item" href="bs-it.html">BS Information Technology</a></li>
+                                    <li><a class="dropdown-item" href="bs-ds.html">BS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-swe.html">BS Software Engineering</a></li>
+                                    <li><a class="dropdown-item" href="bs-cyber.html">BS Cyber Security</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Masters Programs.html">Masters</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ms-cs.html">MS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-ds.html">MS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-it.html">MS Information Technology</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Ph.D Programs.html">PhD</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="phd-cs.html">PhD Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-ds.html">PhD Data Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-it.html">PhD Information Technology</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admissions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                            <li><a class="dropdown-item" href="Undergraduate Programs.html">Undergraduate</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Masters Programs.html">Masters</a></li>
+                            <li><a class="dropdown-item" href="Ph.D Programs.html">PhD</a></li>
+                            <li><a class="dropdown-item" href="Fees Structure.html">Fee Structure</a></li>
+                            <li><a class="dropdown-item" href="Admission Policy.html">Admission Policy</a></li>
+                            <li><a class="dropdown-item" href="Admission form.html">Apply Online</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Careers
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Jobs.html">Job Openings</a></li>
+                            <li><a class="dropdown-item" href="Internships.html">Internships</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            News & Events
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Events.html">Events</a></li>
+                            <li><a class="dropdown-item" href="Blogs.html">Blogs</a></li>
+                            <li><a class="dropdown-item" href="Gallery.html">Gallery</a></li>
+                            <li><a class="dropdown-item" href="FAQs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact Us.html">Contact</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Admission form.html" class="nav-link apply-btn">Apply Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="team-header text-white text-center">
+        <div class="overlay">
+            <div class="container" id="overlay-div">
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to the most common questions about iTech University</p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <div class="container">
+        <div class="faq-header mt-5">
+            <h1>Frequently Asked Questions</h1>
+
+        </div>
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">1. What courses does iTech University offer?</div>
+                <div class="faq-answer">iTech University offers courses in Computer Science, AI, Web Development,
+                    Cybersecurity, Data Science, and more.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">2. How can I apply for admission?</div>
+                <div class="faq-answer">You can apply online through our Admission Portal by filling out the application
+                    form and submitting the required documents.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">3. What are the tuition fees for international students?</div>
+                <div class="faq-answer">Tuition fees vary depending on the course of study. Visit the Fees page for
+                    detailed information.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">4. Does iTech University offer scholarships?</div>
+                <div class="faq-answer">Yes, iTech University offers scholarships based on academic merit and financial
+                    need.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">5. How do I access my course materials?</div>
+                <div class="faq-answer">Once enrolled, you can access course materials through the iTech University
+                    Learning Management System (LMS).</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">6. Are there internship opportunities available?</div>
+                <div class="faq-answer">Yes, we provide internship opportunities with partner companies and
+                    organizations as part of our programs.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">7. What are the application deadlines?</div>
+                <div class="faq-answer">Application deadlines vary for different programs. Check the Admissions page for
+                    upcoming deadlines.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">8. Does iTech University offer online courses?</div>
+                <div class="faq-answer">Yes, we offer a variety of online courses and degree programs to accommodate
+                    remote learning.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">9. How can I contact student support?</div>
+                <div class="faq-answer">You can contact student support via the support portal, phone, or email. Visit
+                    the Contact Us page for more information.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">10. What career services does iTech University provide?</div>
+                <div class="faq-answer">We offer career counseling, resume-building workshops, and job placement
+                    assistance to help students and graduates succeed.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">11. Is there on-campus housing available?</div>
+                <div class="faq-answer">Yes, we offer on-campus housing for students. Visit the Campus Life section for
+                    more details.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">12. How can I transfer credits from another institution?</div>
+                <div class="faq-answer">You can transfer credits by submitting your transcript to the Admissions office
+                    for evaluation.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">13. Does iTech University offer part-time study options?</div>
+                <div class="faq-answer">Yes, we offer part-time study options for many of our degree programs to
+                    accommodate working professionals.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">14. Are there student clubs and organizations at iTech University?</div>
+                <div class="faq-answer">Yes, we have a wide range of student clubs and organizations that cater to
+                    various interests and academic fields.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">15. What are the IT requirements for online students?</div>
+                <div class="faq-answer">Online students need a computer with reliable internet access and the necessary
+                    software required for their course.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">16. Does iTech University offer dual degree programs?</div>
+                <div class="faq-answer">Yes, we offer dual degree programs that allow students to earn two degrees
+                    simultaneously.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">17. How can I access the university's library resources?</div>
+                <div class="faq-answer">All students have access to the digital library and physical resources available
+                    on campus.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">18. What student health services are available?</div>
+                <div class="faq-answer">We offer comprehensive health services, including medical consultations,
+                    counseling, and wellness programs.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">19. What language is the instruction delivered in?</div>
+                <div class="faq-answer">All programs are taught in English to ensure accessibility for international
+                    students.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">20. What is the refund policy?</div>
+                <div class="faq-answer">Refunds are available within the first two weeks of the semester. Check the
+                    Tuition and Fees page for detailed policies.</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', function () {
+                const answer = this.nextElementSibling;
+                answer.classList.toggle('show');
+            });
+        });
+    </script>
+
+
+    <footer>
+        <div class=" container">
+            <div class="row">
+                <div class="col-md-5">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="logo.png" alt="iTech University" class="footer-logo">
+                    </a>
+                    <p class="mt-3">iTech University is dedicated to excellence in teaching, learning,
+                        and research, and
+                        to developing leaders in numerous disciplines who make a difference globally.
+                    </p>
+                </div>
+
+                <div class="col-md-3 text-center footer-contact">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <p><i class="fas fa-map-marker-alt mt-2 pl-2"></i> iTech University Blue Area
+                        <br>Islamabad
+                        Punjab, Pakistan
+                    </p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@itechuniversity.com</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase text-center">Subscribe to our Newsletter</h5>
+                    <form class="d-flex flex-column">
+                        <input type="email" class="form-control mb-2" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-outline-light">Subscribe</button>
+                    </form>
+                    <h5 class="mt-4 text-uppcercase text-center">Follow Us</h5>
+                    <div class="social-icons text-center">
+                        <a href="www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2 footer-links">
+                <div class="col-md-12 text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="iTech University.html">About Us</a> |
+                    <a href="Undergraduate Programs.html">Undergraduate</a> |
+                    <a href="Masters Programs.html">Masters</a> |
+                    <a href="Ph.D Programs.html">Ph.D</a> |
+                    <a href="Contact Us.html">Contact Us</a> |
+                    <a href="Admission form.html">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p> Copyright &copy; 2024 iTech University. <br>All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const dropdownItems = document.querySelectorAll('.dropdown-submenu > a');
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const nextDropdown = this.nextElementSibling;
+                if (nextDropdown) {
+                    nextDropdown.classList.toggle('show');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
