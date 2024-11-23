@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTech University Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        ::selection {
+            background-color: #700F1A;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #700F1A;
+            position: sticky;
+            text-transform: uppercase;
+        }
+
+        .navbar-nav .nav-link,
+        .navbar-nav .dropdown-toggle {
+            color: white;
+            background-color: #700F1A;
+
+
+        }
+
+        .navbar-nav .dropdown-item {
+            color: white;
+            background-color: #700F1A;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: #330710;
+
+        }
+
+        .navbar-nav .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+
+        .dropdown-submenu:hover .dropdown-menu,
+        .dropdown-submenu:focus-within .dropdown-menu {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-submenu .dropdown-menu {
+                display: none;
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .dropdown-submenu:hover .dropdown-menu,
+            .dropdown-submenu:focus-within .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+        }
+
+        .navbar-nav.ms-auto {
+            margin-left: auto;
+        }
+
+        .navbar-brand img {
+            height: 10vh;
+            width: auto;
+        }
+
+        .apply-btn {
+            background-color: #700F1A;
+            color: #700F1A;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+            border: 2px solid white;
+            text-decoration: none;
+        }
+
+        .apply-btn:hover {
+            background-color: white;
+            border: 2px solid white;
+            color: #700F1A;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #700F1A;
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: black;
+        }
+
+        .footer-logo {
+            height: 80px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: black;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            padding-top: 20px;
+        }
+
+        #em-phone {
+            text-decoration: none;
+            color: white;
+        }
+
+        .course-section {
+            padding: 40px 0;
+            background-color: #700F1A;
+        }
+
+        .course-info .tags .badge {
+            margin-right: 10px;
+        }
+
+        .course-title {
+            font-family: "Roboto Condensed", sans-serif;
+            font-weight: bold;
+            font-size: 52px;
+            line-height: 63px;
+        }
+
+        .course-meta .rating {
+            font-size: 1.5rem;
+        }
+
+        .course-meta .students-count i {
+            margin-right: 5px;
+        }
+
+        .btn-outline-light {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .btn-outline-light:hover {
+            background-color: #ffffff;
+            color: #700F1A;
+        }
+
+        .btn-light {
+            color: #700F1A;
+        }
+
+        .course-details-section {
+            background-color: #f8f9fa;
+            color: #343a40;
+            text-align: justify;
+        }
+
+
+
+        .faq-section {
+            background-color: #f8f9fa;
+        }
+
+        .accordion-button {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #700F1A;
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .currl {
+            color: #700F1A;
+        }
+
+        .accordion-body {
+            background-color: #f8f9fa;
+        }
+
+        .accordion-header {
+            margin-bottom: 0.5rem;
+        }
+
+        .accordion-button::after {
+            font-size: 1.2rem;
+            color: #700F1A;
+        }
+
+        .mainSec {
+            background-color: #f8f9fa;
+        }
+
+        .trainer_sec {
+            margin: 50px auto;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #700F1A;
+        }
+
+        .meet {
+            color: #700F1A;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="iTech University">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="iTech University.html">iTech University</a></li>
+                            <li><a class="dropdown-item" href="Faculty.html">Faculty</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle"
+                                    href="Undergraduate Programs.html">Undergraduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="bs-cs.html">BS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-ai.html">BS Artificial Intelligence</a></li>
+                                    <li><a class="dropdown-item" href="bs-it.html">BS Information Technology</a></li>
+                                    <li><a class="dropdown-item" href="bs-ds.html">BS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-swe.html">BS Software Engineering</a></li>
+                                    <li><a class="dropdown-item" href="bs-cyber.html">BS Cyber Security</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Masters Programs.html">Masters</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ms-cs.html">MS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-ds.html">MS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-it.html">MS Information Technology</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Ph.D Programs.html">PhD</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="phd-cs.html">PhD Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-ds.html">PhD Data Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-it.html">PhD Information Technology</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admissions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                            <li><a class="dropdown-item" href="Undergraduate Programs.html">Undergraduate</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Masters Programs.html">Masters</a></li>
+                            <li><a class="dropdown-item" href="Ph.D Programs.html">PhD</a></li>
+                            <li><a class="dropdown-item" href="Fees Structure.html">Fee Structure</a></li>
+                            <li><a class="dropdown-item" href="Admission Policy.html">Admission Policy</a></li>
+                            <li><a class="dropdown-item" href="Admission form.html">Apply Online</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Careers
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Jobs.html">Job Openings</a></li>
+                            <li><a class="dropdown-item" href="Internships.html">Internships</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            News & Events
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Events.html">Events</a></li>
+                            <li><a class="dropdown-item" href="Blogs.html">Blogs</a></li>
+                            <li><a class="dropdown-item" href="Gallery.html">Gallery</a></li>
+                            <li><a class="dropdown-item" href="FAQs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact Us.html">Contact</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Admission form.html" class="nav-link apply-btn">Apply Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <hr style="height: 1%; padding: 0; margin: 0;">
+    <section class="course-section text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="course-info">
+                        <h3 class="course-title">PhD Information Technology</h3>
+                        <div class="course-meta mb-2">
+                            <span class="rating text-warning">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="rating-count mx-2">Top Ranking</span>
+                            <span class="students-count mx-2"><i class="fas fa-user-graduate"></i>1024</span>
+                        </div>
+                        <p>Explore Information Technology field</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="phd-it.png" alt="Instructor Image" class="img-fluid rounded inst_img">
+                </div>
+            </div>
+            <div class="row mt-4 text-center">
+                <div class="col-md-3">
+                    <a href="#desc" class="btn btn-outline-light w-100">Description</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#curr" class="btn btn-outline-light w-100">Curriculum</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#trainer" class="btn btn-outline-light w-100">Instructors</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="Admission Policy.html" class="btn btn-outline-light w-100">Admissoin Policy</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="course-details-section bg-light py-5">
+        <div class="container">
+            <span id="desc"></span>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="fw-bold currl">Course Requirements</h2>
+                    <p>There are no special prerequisites for this course. However, it is recommended that students have
+                        a strong interest in problem-solving and logical reasoning. Basic understanding of mathematics
+                        and computer fundamentals will be beneficial.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <span id="curr"></span>
+                    <h2 class="fw-bold currl">Course Description</h2>
+                    <p>
+                        The PhD in Information Technology program is designed to provide students with advanced
+                        knowledge and research skills in the ever-evolving IT field. The program covers core topics such
+                        as advanced algorithms, data structures, software development, IT infrastructure, and network
+                        security. Students will explore cutting-edge areas like artificial intelligence, machine
+                        learning, cybersecurity, and data science. Through rigorous research and practical experience,
+                        students will develop the expertise to address complex IT challenges and contribute to the
+                        advancement of technology. By the end of the program, students will possess a deep theoretical
+                        understanding of IT and significant hands-on experience in research and innovation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="faq-section py-3">
+        <div class="container">
+            <h2 class="fw-bold mb-4 currl">Course Curriculum</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Introduction to Information Technology
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Learn the basics of computing, covering topics such as the history of computers, programming
+                            fundamentals, and an introduction to algorithms.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Data Structures and Algorithms
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            This module covers essential data structures such as arrays, linked lists, trees, and
+                            graphs. You'll also learn about algorithm design and efficiency.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Object-Oriented Programming (OOP)
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Understand the principles of OOP, including classes, objects, inheritance, polymorphism, and
+                            encapsulation. You'll also learn how to apply these concepts in real-world projects.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Databases and SQL
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Learn how to design, implement, and manage databases. This module covers relational
+                            databases, SQL queries, and data modeling.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Machine Learning Basics
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Learn how to design, implement, and manage databases. This module covers relational
+                            databases, SQL queries, and data modeling.
+                        </div>
+                    </div>
+                </div>
+
+                <span id="trainer"></span>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Introduction to Ai
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Learn how to design, implement, and manage databases. This module covers relational
+                            databases, SQL queries, and data modeling.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            Web Development Basics
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Learn how to design, implement, and manage databases. This module covers relational
+                            databases, SQL queries, and data modeling.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container trainer_sec"
+        style="border: 1px solid rgb(156, 153, 153); padding: 15px; border-radius: 10px; text-align: justify;">
+        <div>
+            <h2 class="meet">Meet The Lead Trainer</h2>
+        </div>
+        <hr>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-3 text-center">
+                <img src="prof.jpg" alt="Trainer Image" class="profile-img img-fluid">
+            </div>
+            <div class="col-md-7">
+                <h3>Partab Saathi (Ph.D in IT)</h3>
+                <p>Partab Saathi is an Information Technology expert with over 13 years of experience in the IT field.
+                    He is the founder of Tech Innovations and IT Solutions Pakistan™, a Certified IT Specialist,
+                    certified trainer, and IT Instructor at LUMS, Punjab University, Superior University, Bahria
+                    University Lahore, and other leading educational institutes in Pakistan. He also serves as an IT
+                    Consultant and Trainer for the USAID SMEA program and USAID PATTA program. Additionally, he has
+                    conducted IT training sessions at the US Embassy Islamabad, US Consulate Lahore, FNF Pakistan, NIC
+                    Karachi, NIC Islamabad, NIC Lahore, i2i, and other renowned organizations.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="logo.png" alt="iTech University" class="footer-logo">
+                    </a>
+                    <p class="mt-3">iTech University is dedicated to excellence in teaching, learning, and research, and
+                        to developing leaders in numerous disciplines who make a difference globally.</p>
+                </div>
+
+                <div class="col-md-3 text-center footer-contact">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <p><i class="fas fa-map-marker-alt mt-2 pl-2"></i> iTech University Blue Area <br>Islamabad
+                        Punjab, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@itechuniversity.com</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase text-center">Subscribe to our Newsletter</h5>
+                    <form class="d-flex flex-column">
+                        <input type="email" class="form-control mb-2" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-outline-light">Subscribe</button>
+                    </form>
+                    <h5 class="mt-4 text-uppcercase text-center">Follow Us</h5>
+                    <div class="social-icons text-center">
+                        <a href="www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2 footer-links">
+                <div class="col-md-12 text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="iTech University.html">About Us</a> |
+                    <a href="Undergraduate Programs.html">Undergraduate</a> |
+                    <a href="Masters Programs.html">Masters</a> |
+                    <a href="Ph.D Programs.html">Ph.D</a> |
+                    <a href="Contact Us.html">Contact Us</a> |
+                    <a href="Admission form.html">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p> Copyright &copy; 2024 iTech University. <br>All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const dropdownItems = document.querySelectorAll('.dropdown-submenu > a');
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const nextDropdown = this.nextElementSibling;
+                if (nextDropdown) {
+                    nextDropdown.classList.toggle('show');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

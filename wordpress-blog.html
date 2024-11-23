@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTech University Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        ::selection {
+            background-color: #700F1A;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #700F1A;
+            position: sticky;
+            text-transform: uppercase;
+        }
+
+        .navbar-nav .nav-link,
+        .navbar-nav .dropdown-toggle {
+            color: white;
+            background-color: #700F1A;
+
+
+        }
+
+        .navbar-nav .dropdown-item {
+            color: white;
+            background-color: #700F1A;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: #330710;
+
+        }
+
+        .navbar-nav .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+
+        .dropdown-submenu:hover .dropdown-menu,
+        .dropdown-submenu:focus-within .dropdown-menu {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-submenu .dropdown-menu {
+                display: none;
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .dropdown-submenu:hover .dropdown-menu,
+            .dropdown-submenu:focus-within .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+        }
+
+        .navbar-nav.ms-auto {
+            margin-left: auto;
+        }
+
+        .navbar-brand img {
+            height: 10vh;
+            width: auto;
+        }
+
+        .apply-btn {
+            background-color: #700F1A;
+            color: #700F1A;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+            border: 2px solid white;
+            text-decoration: none;
+        }
+
+        .apply-btn:hover {
+            background-color: white;
+            border: 2px solid white;
+            color: #700F1A;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #700F1A;
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: black;
+        }
+
+        .footer-logo {
+            height: 80px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: black;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            padding-top: 20px;
+        }
+
+        #em-phone {
+            text-decoration: none;
+            color: white;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #700F1A;
+        }
+
+        .blog-author {
+            font-size: 1.2rem;
+            color: #666666;
+        }
+
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-top: 20px;
+            text-align: justify;
+        }
+
+        .comment-box {
+            margin-top: 50px;
+        }
+
+        .comment {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            border: 1px solid #e0e0e0;
+        }
+
+        .comment h6 {
+            font-weight: 600;
+            color: #700F1A;
+        }
+
+        .comment p {
+            margin-bottom: 5px;
+        }
+
+        .comment small {
+            color: #888;
+        }
+
+        .blog-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .comment-form label {
+            color: #700F1A;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: #700F1A;
+            border-color: #700F1A;
+        }
+
+        .btn-primary:hover {
+            background-color: #990F1A;
+            border-color: #990F1A;
+        }
+
+        @media (max-width: 767px) {
+            .blog-title {
+                font-size: 2rem;
+            }
+
+            .blog-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="iTech University">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="iTech University.html">iTech University</a></li>
+                            <li><a class="dropdown-item" href="Faculty.html">Faculty</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle"
+                                    href="Undergraduate Programs.html">Undergraduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="bs-cs.html">BS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-ai.html">BS Artificial Intelligence</a></li>
+                                    <li><a class="dropdown-item" href="bs-it.html">BS Information Technology</a></li>
+                                    <li><a class="dropdown-item" href="bs-ds.html">BS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-swe.html">BS Software Engineering</a></li>
+                                    <li><a class="dropdown-item" href="bs-cyber.html">BS Cyber Security</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Masters Programs.html">Masters</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ms-cs.html">MS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-ds.html">MS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-it.html">MS Information Technology</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Ph.D Programs.html">PhD</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="phd-cs.html">PhD Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-ds.html">PhD Data Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-it.html">PhD Information Technology</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admissions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                            <li><a class="dropdown-item" href="Undergraduate Programs.html">Undergraduate</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Masters Programs.html">Masters</a></li>
+                            <li><a class="dropdown-item" href="Ph.D Programs.html">PhD</a></li>
+                            <li><a class="dropdown-item" href="Fees Structure.html">Fee Structure</a></li>
+                            <li><a class="dropdown-item" href="Admission Policy.html">Admission Policy</a></li>
+                            <li><a class="dropdown-item" href="Admission form.html">Apply Online</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Careers
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Jobs.html">Job Openings</a></li>
+                            <li><a class="dropdown-item" href="Internships.html">Internships</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            News & Events
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Events.html">Events</a></li>
+                            <li><a class="dropdown-item" href="Blogs.html">Blogs</a></li>
+                            <li><a class="dropdown-item" href="Gallery.html">Gallery</a></li>
+                            <li><a class="dropdown-item" href="FAQs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact Us.html">Contact</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Admission form.html" class="nav-link apply-btn">Apply Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="blog-post">
+            <img src="wordpress-1-blog.jpg" alt="WordPress Blog Image" class="blog-image">
+            <h1 class="blog-title">Why WordPress is the Best Choice for Website Development</h1>
+            <p class="blog-author">By John Doe, November 17, 2024 | ITECH University</p>
+            <hr>
+
+            <div class="blog-content">
+                <p>
+                    WordPress is a powerful content management system (CMS) that has revolutionized the way websites are built and maintained. As the most popular platform for website development, it powers over 40% of websites across the internet. In this blog post, we will explore why WordPress is the best choice for website development, especially for both beginners and seasoned developers.
+                </p>
+
+                <h2 style="color: #700F1A;">1. User-Friendly Interface</h2>
+                <p>
+                    One of the primary reasons WordPress is so widely used is its user-friendly interface. WordPress simplifies the process of building a website, even for beginners. With an intuitive dashboard and drag-and-drop features, you can create a website without needing to write any code. This is particularly beneficial for non-technical users who want to focus on content creation rather than development.
+                </p>
+
+                <h2 style="color: #700F1A;">2. Open-Source and Free to Use</h2>
+                <p>
+                    WordPress is an open-source CMS, which means it is completely free to use. The open-source nature of WordPress allows anyone to modify the code to suit their needs. This has led to the creation of thousands of plugins, themes, and customization options, making WordPress an extremely flexible and cost-effective platform for building websites.
+                </p>
+
+                <h2 style="color: #700F1A;">3. Highly Customizable with Themes and Plugins</h2>
+                <p>
+                    WordPress offers a wide range of themes and plugins that allow you to easily customize the look and functionality of your website. Whether you're building a blog, an eCommerce store, or a portfolio site, WordPress has the right tools to bring your vision to life. There are thousands of themes and plugins available in the WordPress repository, and many are free to use.
+                </p>
+
+                <h2 style="color: #700F1A;">4. SEO-Friendly Platform</h2>
+                <p>
+                    WordPress is built with search engine optimization (SEO) in mind. It includes features such as customizable URLs, meta descriptions, and headers that make it easier for search engines to crawl and index your site. Moreover, there are several SEO plugins, like Yoast SEO, that can help optimize your website further, increasing your chances of ranking high in search engine results.
+                </p>
+
+                <h2 style="color: #700F1A;">5. Mobile Responsiveness</h2>
+                <p>
+                    With more users accessing the web through mobile devices than ever before, having a mobile-responsive website is essential. Many WordPress themes are designed to be responsive, meaning your website will automatically adjust to fit any screen size. This ensures that your website looks great and functions properly on smartphones, tablets, and desktops.
+                </p>
+
+                <h2 style="color: #700F1A;">6. Large Community and Support</h2>
+                <p>
+                    WordPress has a large and active community of developers, designers, and users who contribute to its growth. If you encounter any issues or need guidance, you can easily find help through online forums, tutorials, and documentation. The WordPress community is one of its strongest features, providing support and resources for both beginners and experts.
+                </p>
+                <img src="wordpress-2-blog.jpg" alt="WordPress" class="blog-image">
+
+                <h2 style="color: #700F1A;">7. Secure and Reliable</h2>
+                <p>
+                    Security is a top priority for WordPress. Regular updates and security patches are released to keep your website secure from potential threats. Additionally, you can install security plugins like Wordfence to further enhance the security of your website. WordPress also provides a secure login process and offers backup options to ensure that your site is protected.
+                </p>
+
+                <h2 style="color: #700F1A;">8. E-commerce Ready</h2>
+                <p>
+                    WordPress is an excellent choice for creating an online store. With the WooCommerce plugin, you can easily turn your WordPress website into a fully functional e-commerce site. WooCommerce provides features like product catalogs, shopping carts, and secure payment gateways, making it easy to sell products and services online.
+                </p>
+
+                <h2 style="color: #700F1A;">Conclusion</h2>
+                <p>
+                    In conclusion, WordPress is an ideal platform for website development because of its ease of use, flexibility, cost-effectiveness, and extensive support. Whether you're building a personal blog, a corporate website, or an e-commerce store, WordPress provides the tools and features you need to succeed online.
+                </p>
+            </div>
+        </div>
+
+        <div class="comment-box mb-5">
+            <h4 class="mb-4" style="color: #700F1A;">Comments</h4> <!-- ITECH Red -->
+            <div id="commentList" class="mt-4"></div>
+
+            <h5 class="mt-5" style="color: #700F1A;">Leave a Comment</h5>
+            <form id="commentForm">
+                <div class="mb-3">
+                    <label for="commenterName" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="commenterName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="commentText" class="form-label">Your Comment</label>
+                    <textarea class="form-control" id="commentText" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Comment</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('commenterName').value;
+            const comment = document.getElementById('commentText').value;
+
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `
+                <h6>${name}</h6>
+                <p>${comment}</p>
+                <small>Just now</small>
+            `;
+
+            document.getElementById('commentList').appendChild(newComment);
+
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="logo.png" alt="iTech University" class="footer-logo">
+                    </a>
+                    <p class="mt-3">iTech University is dedicated to excellence in teaching, learning, and research, and
+                        to developing leaders in numerous disciplines who make a difference globally.</p>
+                </div>
+
+                <div class="col-md-3 text-center footer-contact">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <p><i class="fas fa-map-marker-alt mt-2 pl-2"></i> iTech University Blue Area <br>Islamabad
+                        Punjab, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@itechuniversity.com</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase text-center">Subscribe to our Newsletter</h5>
+                    <form class="d-flex flex-column">
+                        <input type="email" class="form-control mb-2" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-outline-light">Subscribe</button>
+                    </form>
+                    <h5 class="mt-4 text-uppcercase text-center">Follow Us</h5>
+                    <div class="social-icons text-center">
+                        <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://web.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2 footer-links">
+                <div class="col-md-12 text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="iTech University.html">About Us</a> |
+                    <a href="Undergraduate Programs.html">Undergraduate</a> |
+                    <a href="Masters Programs.html">Masters</a> |
+                    <a href="Ph.D Programs.html">Ph.D</a> |
+                    <a href="Contact Us.html">Contact Us</a> |
+                    <a href="Admission form.html">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p> Copyright &copy; 2024 iTech University. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const dropdownItems = document.querySelectorAll('.dropdown-submenu > a');
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const nextDropdown = this.nextElementSibling;
+                if (nextDropdown) {
+                    nextDropdown.classList.toggle('show');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
