@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTech University Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        ::selection {
+            background-color: #700F1A;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #700F1A;
+            position: sticky;
+            text-transform: uppercase;
+        }
+
+        .navbar-nav .nav-link,
+        .navbar-nav .dropdown-toggle {
+            color: white;
+            background-color: #700F1A;
+
+
+        }
+
+        .navbar-nav .dropdown-item {
+            color: white;
+            background-color: #700F1A;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: #330710;
+
+        }
+
+        .navbar-nav .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+
+        .dropdown-submenu:hover .dropdown-menu,
+        .dropdown-submenu:focus-within .dropdown-menu {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-submenu .dropdown-menu {
+                display: none;
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .dropdown-submenu:hover .dropdown-menu,
+            .dropdown-submenu:focus-within .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+        }
+
+        .navbar-nav.ms-auto {
+            margin-left: auto;
+        }
+
+        .navbar-brand img {
+            height: 10vh;
+            width: auto;
+        }
+
+        .apply-btn {
+            background-color: #700F1A;
+            color: #700F1A;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+            border: 2px solid white;
+            text-decoration: none;
+        }
+
+        .apply-btn:hover {
+            background-color: white;
+            border: 2px solid white;
+            color: #700F1A;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #700F1A;
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: black;
+        }
+
+        .footer-logo {
+            height: 80px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: black;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            padding-top: 20px;
+        }
+
+        #em-phone {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .blog-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #700F1A; /* ITECH Red */
+        }
+        .blog-author {
+            font-size: 1.2rem;
+            color: #666666;
+        }
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-top: 20px;
+            text-align: justify;
+        }
+        .comment-box {
+            margin-top: 50px;
+        }
+        .comment {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            border: 1px solid #e0e0e0;
+        }
+        .comment h6 {
+            font-weight: 600;
+            color: #700F1A; /* ITECH Red */
+        }
+        .comment p {
+            margin-bottom: 5px;
+        }
+        .comment small {
+            color: #888;
+        }
+        .blog-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .comment-form label {
+            color: #700F1A; /* ITECH Red */
+            font-weight: 500;
+        }
+        .btn-primary {
+            background-color: #700F1A;
+            border-color: #700F1A;
+        }
+        .btn-primary:hover {
+            background-color: #990F1A;
+            border-color: #990F1A;
+        }
+        @media (max-width: 767px) {
+            .blog-title {
+                font-size: 2rem;
+            }
+            .blog-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="iTech University">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="iTech University.html">iTech University</a></li>
+                            <li><a class="dropdown-item" href="Faculty.html">Faculty</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle"
+                                    href="Undergraduate Programs.html">Undergraduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="bs-cs.html">BS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-ai.html">BS Artificial Intelligence</a></li>
+                                    <li><a class="dropdown-item" href="bs-it.html">BS Information Technology</a></li>
+                                    <li><a class="dropdown-item" href="bs-ds.html">BS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-swe.html">BS Software Engineering</a></li>
+                                    <li><a class="dropdown-item" href="bs-cyber.html">BS Cyber Security</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Masters Programs.html">Masters</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ms-cs.html">MS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-ds.html">MS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-it.html">MS Information Technology</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Ph.D Programs.html">PhD</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="phd-cs.html">PhD Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-ds.html">PhD Data Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-it.html">PhD Information Technology</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admissions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                            <li><a class="dropdown-item" href="Undergraduate Programs.html">Undergraduate</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Masters Programs.html">Masters</a></li>
+                            <li><a class="dropdown-item" href="Ph.D Programs.html">PhD</a></li>
+                            <li><a class="dropdown-item" href="Fees Structure.html">Fee Structure</a></li>
+                            <li><a class="dropdown-item" href="Admission Policy.html">Admission Policy</a></li>
+                            <li><a class="dropdown-item" href="Admission form.html">Apply Online</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Careers
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Jobs.html">Job Openings</a></li>
+                            <li><a class="dropdown-item" href="Internships.html">Internships</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            News & Events
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Events.html">Events</a></li>
+                            <li><a class="dropdown-item" href="Blogs.html">Blogs</a></li>
+                            <li><a class="dropdown-item" href="Gallery.html">Gallery</a></li>
+                            <li><a class="dropdown-item" href="FAQs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact Us.html">Contact</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Admission form.html" class="nav-link apply-btn">Apply Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="blog-post">
+            <img src="app-dev-1-blog.jpg" alt="App Development Blog Image" class="blog-image">
+            <h1 class="blog-title">The Essential Guide to App Development: From Idea to Launch</h1>
+            <p class="blog-author">By John Doe, November 17, 2024 | ITECH University</p>
+            <hr>
+
+            <div class="blog-content">
+                <p>
+                    In today’s digital age, mobile applications have become a central part of our everyday lives. Whether it’s for shopping, communication, entertainment, or business, apps are transforming the way we interact with the world. If you're thinking about developing an app but don't know where to start, this blog will guide you through the essential steps of app development, from conceptualizing your idea to launching it on app stores.
+                </p>
+
+                <h2 style="color: #700F1A;">1. Brainstorm Your App Idea</h2>
+                <p>
+                    The first step in app development is coming up with an idea. Think about what problem your app will solve or what value it will bring to users. Successful apps often address a need or simplify a process. 
+                </p>
+                <p>Ask yourself:</p>
+                <ul>
+                    <li>Who is my target audience?</li>
+                    <li>What pain points am I addressing?</li>
+                    <li>How will my app stand out from competitors?</li>
+                </ul>
+
+                <h2 style="color: #700F1A;">2. Research the Market</h2>
+                <p>
+                    Before diving into development, conduct thorough market research. Analyze the competition and understand user needs. Look for gaps in the market that your app could fill or opportunities to improve upon existing solutions. This will help you refine your concept and ensure there’s demand for your app.
+                </p>
+
+                <h2 style="color: #700F1A;">3. Define Key Features</h2>
+                <p>
+                    Once you have your idea and market research in hand, it’s time to outline your app’s key features. Keep it simple for your first version (known as an MVP – Minimum Viable Product). Focus on the core functionality and avoid overloading your app with too many features. You can always add more later through updates.
+                </p>
+
+                <h2 style="color: #700F1A;">4. Create Wireframes and Design</h2>
+                <p>
+                    Before coding begins, sketch out the user interface (UI) and how users will navigate through the app. Wireframes are basic layouts that give an overview of how your app will look and function.
+                </p>
+
+                <img src="app-dev-2-blog.jpg" alt="App Development Wireframe" class="blog-image">
+
+                <h2 style="color: #700F1A;">5. Choose Your Development Approach</h2>
+                <p>
+                    When it comes to development, you have two primary choices: <strong>native</strong> or <strong>cross-platform</strong>. Native apps tend to perform better and provide a smoother user experience, but cross-platform frameworks like Flutter and React Native can save time and resources.
+                </p>
+
+                <h2 style="color: #700F1A;">6. Development Process: Start Building</h2>
+                <p>
+                    Once you’ve chosen your development path, the coding begins. This is where the magic happens as your app transitions from an idea into a working product. Ensure the front-end, back-end, and integration work together seamlessly to provide a smooth user experience.
+                </p>
+
+                <h2 style="color: #700F1A;">7. Test Your App</h2>
+                <p>
+                    Before launching, you need to thoroughly test your app. Focus on usability, performance, security, and compatibility testing to ensure your app works flawlessly across different devices and environments.
+                </p>
+
+                <h2 style="color: #700F1A;">8. Launch Your App</h2>
+                <p>
+                    Once testing is complete, you’re ready to launch! Submitting your app to the Apple App Store and Google Play Store requires meeting their respective guidelines, optimizing your app description, and promoting your app through effective marketing strategies.
+                </p>
+
+                <h2 style="color: #700F1A;">9. Maintain and Update Your App</h2>
+                <p>
+                    The work doesn’t stop after the launch. Regularly updating your app with new features, performance improvements, and bug fixes is essential to keep users engaged and retain a strong user base.
+                </p>
+            </div>
+        </div>
+
+        <div class="comment-box mb-5">
+            <h4 class="mb-4" style="color: #700F1A;">Comments</h4> <!-- ITECH Red -->
+            <div id="commentList" class="mt-4"></div>
+
+            <h5 class="mt-5" style="color: #700F1A;">Leave a Comment</h5> <!-- ITECH Red -->
+            <form id="commentForm" class="comment-form">
+                <div class="mb-3">
+                    <label for="commenterName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="commenterName" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="commentText" class="form-label">Comment</label>
+                    <textarea class="form-control" id="commentText" rows="4" placeholder="Write your comment here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Comment</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const commenterName = document.getElementById('commenterName').value;
+            const commentText = document.getElementById('commentText').value;
+
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `
+                <h6>${commenterName}</h6>
+                <p>${commentText}</p>
+                <small>Just now</small>
+            `;
+
+            document.getElementById('commentList').appendChild(newComment);
+
+            document.getElementById('commentForm').reset();
+        });
+    </script>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="logo.png" alt="iTech University" class="footer-logo">
+                    </a>
+                    <p class="mt-3">iTech University is dedicated to excellence in teaching, learning, and research, and
+                        to developing leaders in numerous disciplines who make a difference globally.</p>
+                </div>
+
+                <div class="col-md-3 text-center footer-contact">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <p><i class="fas fa-map-marker-alt mt-2 pl-2"></i> iTech University Blue Area <br>Islamabad
+                        Punjab, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@itechuniversity.com</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase text-center">Subscribe to our Newsletter</h5>
+                    <form class="d-flex flex-column">
+                        <input type="email" class="form-control mb-2" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-outline-light">Subscribe</button>
+                    </form>
+                    <h5 class="mt-4 text-uppcercase text-center">Follow Us</h5>
+                    <div class="social-icons text-center">
+                        <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://web.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2 footer-links">
+                <div class="col-md-12 text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="iTech University.html">About Us</a> |
+                    <a href="Undergraduate Programs.html">Undergraduate</a> |
+                    <a href="Masters Programs.html">Masters</a> |
+                    <a href="Ph.D Programs.html">Ph.D</a> |
+                    <a href="Contact Us.html">Contact Us</a> |
+                    <a href="Admission form.html">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p> Copyright &copy; 2024 iTech University. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const dropdownItems = document.querySelectorAll('.dropdown-submenu > a');
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const nextDropdown = this.nextElementSibling;
+                if (nextDropdown) {
+                    nextDropdown.classList.toggle('show');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTech University Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        ::selection {
+            background-color: #700F1A;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #700F1A;
+            position: sticky;
+            text-transform: uppercase;
+        }
+
+        .navbar-nav .nav-link,
+        .navbar-nav .dropdown-toggle {
+            color: white;
+            background-color: #700F1A;
+
+
+        }
+
+        .navbar-nav .dropdown-item {
+            color: white;
+            background-color: #700F1A;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: #330710;
+
+        }
+
+        .navbar-nav .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+
+        .dropdown-submenu:hover .dropdown-menu,
+        .dropdown-submenu:focus-within .dropdown-menu {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-submenu .dropdown-menu {
+                display: none;
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .dropdown-submenu:hover .dropdown-menu,
+            .dropdown-submenu:focus-within .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+        }
+
+        .navbar-nav.ms-auto {
+            margin-left: auto;
+        }
+
+        .navbar-brand img {
+            height: 10vh;
+            width: auto;
+        }
+
+        .apply-btn {
+            background-color: #700F1A;
+            color: #700F1A;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+            border: 2px solid white;
+            text-decoration: none;
+        }
+
+        .apply-btn:hover {
+            background-color: white;
+            border: 2px solid white;
+            color: #700F1A;
+        }
+
+        /* Footer  */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #700F1A;
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer .social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: black;
+        }
+
+        .footer-logo {
+            height: 80px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: black;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            padding-top: 20px;
+        }
+
+        #em-phone {
+            text-decoration: none;
+            color: white;
+        }
+
+        .team-header {
+            position: sticky;
+            background: url('admission-policy.png ') center center/cover no-repeat;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .team-header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            /* Dark overlay */
+        }
+
+        .team-header h1 {
+            z-index: 1;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+            margin-top: 20vh;
+        }
+
+        .team-header p {
+            z-index: 1;
+            font-size: 1.2rem;
+        }
+
+
+        @media (max-width: 1200px) {
+            .team-header h1 {
+                font-size: 3rem;
+                margin-top: 15vh;
+            }
+
+            .team-header p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .team-header {
+                height: 300px;
+            }
+
+            .team-header h1 {
+                font-size: 2.5rem;
+                margin-top: 10vh;
+            }
+
+            .team-header p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-header {
+                height: 250px;
+            }
+
+            .team-header h1 {
+                font-size: 2rem;
+                margin-top: 8vh;
+            }
+
+            .team-header p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .team-header {
+                height: 200px;
+            }
+
+            .team-header h1 {
+                font-size: 1.5rem;
+                margin-top: 5vh;
+            }
+
+            .team-header p {
+                font-size: 0.85rem;
+            }
+        }
+
+        #one-heading {
+            color: #700F1A;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="iTech University">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="iTech University.html">iTech University</a></li>
+                            <li><a class="dropdown-item" href="Faculty.html">Faculty</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle"
+                                    href="Undergraduate Programs.html">Undergraduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="bs-cs.html">BS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-ai.html">BS Artificial Intelligence</a></li>
+                                    <li><a class="dropdown-item" href="bs-it.html">BS Information Technology</a></li>
+                                    <li><a class="dropdown-item" href="bs-ds.html">BS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="bs-swe.html">BS Software Engineering</a></li>
+                                    <li><a class="dropdown-item" href="bs-cyber.html">BS Cyber Security</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Masters Programs.html">Masters</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ms-cs.html">MS Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-ds.html">MS Data Science</a></li>
+                                    <li><a class="dropdown-item" href="ms-it.html">MS Information Technology</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="Ph.D Programs.html">PhD</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="phd-cs.html">PhD Computer Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-ds.html">PhD Data Science</a></li>
+                                    <li><a class="dropdown-item" href="phd-it.html">PhD Information Technology</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="admissionsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Admissions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="admissionsDropdown">
+                            <li><a class="dropdown-item" href="Undergraduate Programs.html">Undergraduate</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Masters Programs.html">Masters</a></li>
+                            <li><a class="dropdown-item" href="Ph.D Programs.html">PhD</a></li>
+                            <li><a class="dropdown-item" href="Fees Structure.html">Fee Structure</a></li>
+                            <li><a class="dropdown-item" href="Admission Policy.html">Admission Policy</a></li>
+                            <li><a class="dropdown-item" href="Admission form.html">Apply Online</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Careers
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Jobs.html">Job Openings</a></li>
+                            <li><a class="dropdown-item" href="Internships.html">Internships</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            News & Events
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <li><a class="dropdown-item" href="Events.html">Events</a></li>
+                            <li><a class="dropdown-item" href="Blogs.html">Blogs</a></li>
+                            <li><a class="dropdown-item" href="Gallery.html">Gallery</a></li>
+                            <li><a class="dropdown-item" href="FAQs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact Us.html">Contact</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Admission form.html" class="nav-link apply-btn">Apply Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="team-header text-white text-center">
+        <div class="overlay">
+            <div class="container" id="overlay-div">
+                <h1>Admission Policy</h1>
+                <p>Discover affordable excellence in education with the iTech University fee structure.</p>
+            </div>
+        </div>
+
+    </section>
+    <div class="container mt-5">
+        <h3 class="mt-4" id="one-heading"><b>Admission Policy</b>
+        </h3>
+        <p>The Aror University of Art, Architecture, Design and Heritage Sindh grounds itself in Merit as the basic
+            criterion for selection of its students. In lieu of the set criterion determined by the competent authority
+            the following Admission Policy is formulated for the year 2023-2024.</p>
+        <div class="container">
+            <ul class="mt-3">
+                <li class="mt-1">Admission to the Second year Session 2023-2024 is made according to the policies and
+                    rules framed by
+                    the authorities of the University from time to time. The mentioned rules are subject to revision by
+                    the Competent Authority as and when deemed necessary and without notice.</li>
+                <li class="mt-2">
+                    All undergraduate degree programs are regular/full time Morning programs. No student admitted in the
+                    University is allowed to engage in employment or maintain simultaneous enrollment in any other
+                    educational institution. Violation of above will lead to cancellation of admission.
+                </li>
+                <li class="mt-2">
+                    Admission in each discipline shall be granted purely on the basis of merit as prescribed in the
+                    admission notice and thereby admission policy.
+                </li>
+                <li class="mt-2">
+                    Application for admission against various disciplines must be made on the prescribed online
+                    application form.
+                </li>
+                <li class="mt-2">To appear in the Entry Test, an online application processing fee of Rs 1,500
+                    (Nonrefundable) is required to be paid to the University through bank (Bank Details can be acquired
+                    through University website).
+                </li>
+                <li class="mt-2">An applicant meeting the qualification criteria successfully of more than one
+                    discipline will need to select the preferred discipline as mentioned in the online application form.
+                </li>
+                <li class="mt-2">Admission in each discipline will be offered to candidates in the order of merit.
+                </li>
+                <li class="mt-2">The overall merit of the candidate applying for any discipline for provisional
+                    admission shall be determined on the basis of S.S.C/0’Level (or equivalent certificate), H.S.C / A’
+                    Level /DAE (or equivalent certificate), Entry Test and interview.
+                </li>
+                <li class="mt-2">Original documents shall be produced by the student as a mandatory requirement at the
+                    time of interview.
+                </li>
+                <li class="mt-2">The candidates applying for admission on the basis of fake/tempered documents (detected
+                    before or after their admission) shall have the admission canceled after completion of necessary
+                    formalities. The student shall also be prosecuted under relevant criminal law. Additionally, the
+                    candidate may be debarred for a period of three years whilst all payments made to the University by
+                    the candidate shall be forfeited in favor of the University.
+                </li>
+                <li class="mt-2">Students admitted are not to withdraw original HSC mark sheets and certificate before
+                    completion of Degree.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div>
+            <h3 id="one-heading"><b>Determination of Merit Position</b>
+            </h3>
+            <p>
+                Entry Test. All candidates seeking admission under the following disciplines / categories and fulfilling
+                all pre-admission requirements are eligible to appear in aptitude test. The venue, date and time of test
+                shall be mentioned in the admit card issued to each candidate. Candidates shall not be allowed to sit in
+                aptitude test without original Admit card.
+            </p>
+            <p class="mt-4">Note: Allocation of seats will be purely based on open merit without any discrimination of
+                gender, race, geography, status or religion.
+            </p>
+            <ul>
+                <li class="mt-4">The test will be based on the difficulty level in sync with Intermediate curricula as
+                    per following
+                    distribution.
+                </li>
+                <li class="mt-3" id="one-heading"><b>For all BS Programs
+                    </b></li>
+                <li class="mt-3">Entry test: 100 Questions
+                </li>
+                <li class="mt-3">Part-I (English) 30 Questions
+                </li>
+                <li class="mt-3">Part-II (Mathematics) 20 Questions
+                </li>
+                <li class="mt-3">Part-III (Computer) 10 Questions
+                </li>
+                <li class="mt-3">Part-IV (General Science) 20 Questions
+                </li>
+                <li class="mt-3">Part- V (General Knowledge) 20 Questions
+                </li>
+                <li class="mt-3">The HSC curriculum shall be kept into consideration for premedical, pre- engineering,
+                    Commerce, Arts & Humanities sections. There will be 60% weightage of entry test score in CPN.
+                </li>
+                <li class="mt-3">Each correct answer will be awarded with one mark in the Entry Test. There will be no
+                    negative marking.
+                </li>
+            </ul>
+
+            <table class="table table-bordered mt-5">
+                <tr class="bg bg-dark">
+                    <th class="bg-th">Percentage of Marks</th>
+                    <th class="bg-th">Multiplying weightage</th>
+                </tr>
+                <tr>
+                    <td>a- Matriculation 60% (or equivalent certificate)</td>
+                    <td>10%
+                    </td>
+                </tr>
+                <tr>
+                    <td>b- Intermediate 60% (or equivalent certificate). </td>
+                    <td>20%
+                    </td>
+                </tr>
+                <tr>
+                    <td>c- Entry Test 50% </td>
+                    <td>60%</td>
+                </tr>
+                <tr>
+                    <td>d- Interview 50%</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>100%</td>
+                </tr>
+            </table>
+            <p class="mt-5"><b>Note:</b>The weightage of HSC/A Level percentage for old batches shall be 10% Based on
+                the above table, the Composite Percentage Number (CPN) will be calculated as follows:</p>
+            <p class="mt-5">
+                CPN = 0. I * [Percentage Marks in matriculation (or equivalent certificate)] + 0.2* [Percentage Marks in
+                Intermediate (or equivalent certificate)] + 0.6*[marks obtained in aptitude test] + 0.1 *[marks obtained
+                in Interview].
+            </p>
+            <ul>
+                <li class="mt-3">The merit shall be observed in each discipline as per availability of seats. Admission
+                    in each discipline shall be made in order of the choice given by the candidate at the time of
+                    application.
+                </li>
+                <li class="mt-3">
+                    If two eligible candidates are competing for one seat, the final decision of admission shall be made
+                    in favor of the candidate obtaining higher marks in the Entry Test. In case the entry test marks are
+                    also the same, the decision for the admission will be made on the basis of total marks in HSC and
+                    SSC or total number of ‘As’ in A and O Levels Exams.
+
+                </li>
+            </ul>
+            <h4 class="mt-4" id="one-heading"><b>Additional Marks for Hafiz-e-Quran
+                </b></h4>
+            <ul>
+                <li class="mt-4">
+                    The candidates who have a certificate of Hafiz-e-Quraan printed form from a registered Maderiasa and
+                    clear the test of Hifz taken in the University, are also considered to have additional 20 marks to
+                    be added to the marks of HSC.
+
+                </li>
+            </ul>
+            <h4 class="mt-4" id="one-heading"><b>Deduction of Marks due to Gap in Education
+                </b></h4>
+            <ul>
+                <li class="mt-3">
+                    In case of a gap or repetition of HSC Examinations, the merit will be determined as described below.
+                    One percent of the aggregate marks will be deducted for each unaccounted gap of one academic year
+                    after appearing in SSC-II examination from the total marks of the HSSC/DAE examination of (passed)
+                    or equivalent, for the purpose of determination of merit in each Category. This deduction is
+                    applicable whether the SSC/HSSC/DAE examination had been repeated or the gap had occurred owing to
+                    any other reason. A maximum unaccounted gap of three years is allowed between the year of appearing
+                    in SSC-II examination for the first time and year of admission.
+
+                </li>
+            </ul>
+            <h4 class="mt-4" id="one-heading"><b>Display of Merit List of Eligible Candidates
+                </b></h4>
+            <p class="mt-4">a. The Merit list for each Discipline will be notified and displayed on the University
+                Notice Boards and will also be uploaded on the University Website.
+            </p>
+            <p>
+                b. University reserves the right to withhold/cancel the result of the Aptitude Test of any candidate if
+                he/she was found guilty of deception/ impersonation and/or in violation of the provided disciplinary
+                conduct.
+
+            </p>
+            <p>c. After the announcement of the result of the Aptitude Test, the Merit List will be prepared for each
+                discipline and candidates shall be called for an interview. Candidate must bring along all the original
+                testimonials at the time of interview, failure to which shall disqualify the candidate.
+            </p>
+            <p>d. The names of candidates who fail to appear for interview on the scheduled date and time, without any
+                intimation, shall be deleted from the merit list of the relevant discipline and they shall not be
+                considered for admission. Any claim in this regard shall not be entertained.
+            </p>
+            <p>e. The decision of the Admission Committee shall be final. However, candidates may appeal against the
+                decision to the redressal committee within 05 business days with complete evidence in favor of
+                complaint.
+            </p>
+            <p>f. The selected candidates shall submit the following forms (Available on University website).
+            </p>
+            <p style="padding-left: 20px;">i. Performa for University Identity Card. ii. Enrolment form of university.
+            </p>
+            <h4 class="mt-4" id="one-heading"><b>Award of Discipline
+                </b></h4>
+            <p class="mt-4">
+                a. The candidates are required to fill “Choice of Discipline form” to select their priority of
+                Discipline very carefully. The choices mentioned in the option form cannot be changed.
+
+            </p>
+            <p>b. If any candidate accepts admission in technology / discipline other than the first choice of
+                discipline and is satisfied with the same, must submit an affidavit within three working days from the
+                date of display of such list. It must be clearly mentioned that the applicant is satisfied with the
+                awarded discipline and the discipline/technology shall not be changed at any point in time during the
+                academic program.
+            </p>
+            <h4 class="mt-4" id="one-heading"><b>Admission of Candidate(s) who fails to deposit the Prescribed
+                    University fee within due
+                    date
+                </b></h4>
+            <p class="mt-4">
+                a. If any candidate fails to deposit an admission fee within the due date, the seat shall be allotted to
+                another candidate on merit. At a later stage, if the candidate reports for admission that may be
+                considered for admission against the left-over seats of the respective discipline as per the “Choice of
+                Technology / Discipline” before the closing date of admission.
+
+            </p>
+            <h4 class="mt-4" id="one-heading"><b>Display of List of Selected Candidates
+                </b></h4>
+            <p class="mt-4">
+                a. The list of all selected candidates under all disciplines shall be displayed on the University
+                website and main notice boards.
+
+            </p>
+            <p>
+                b. The admission list in each discipline announced by the University is provisional; in case of
+                identification of any mistake, it shall be rectified.
+
+            </p>
+            <h4 class="mt-4" id="one-heading"><b>Closing of Admission
+                </b></h4>
+            <p class="mt-4">
+                The admissions for the session 2023-2024 will be closed at the end of 2nd week from the date of start of
+                classes. After the closing date of admission, no new admissions will be entertained and the vacant seats
+                (for any reason) will remain so.
+
+            </p>
+            <div style="padding-left: 20px; text-align: justify;">
+                <p>a. If a candidate is eligible for discipline which is not the first choice, the candidate may submit
+                    the request for Change of Discipline (COD) within TWO weeks of display of Merit list. Any available
+                    seat other than self-finance shall be awarded to the candidate after completion of admission
+                    process. This will be done on first come first serve basis.
+                </p>
+                <p>b. Candidates eligible for a discipline which is not the first choice may request to switch the
+                    category from open merit to self-finance with agreement to pay fee as proposed for the said
+                    category.
+                </p>
+            </div>
+            <p>The selected candidates will have to fill and submit prescribed enrolment form duly signed and complete
+                by all means for enrolment. Without having an Enrolment Card, students will not be allowed to appear in
+                the semester examination.
+            </p>
+            <h4 class="mt-4" id="one-heading"><b>Enrollment
+                </b></h4>
+            <p class="mt-4">
+                The selected candidates will have to fill and submit prescribed enrolment form duly signed and complete
+                by all means for enrolment. Without having an Enrolment Card, students will not be allowed to appear in
+                the semester examination.
+
+            </p>
+            <h4 class="mt-4" id="one-heading"><b>Cancellation/ Withdrawal of Admission
+                </b></h4>
+            <div style="padding-left: 20px;">
+
+                <p class="mt-4">
+                    i. Concealment of facts at the time of seeking admission/ non-submission of complete and genuine
+                    documents! tempering required documents or falsifying them would mean that the student has been
+                    admitted illegally. In such a case, the admission of the student shall be canceled. University also
+                    reserves the right to initiate legal action against such students.
+
+                </p>
+                <p>ii. The Admission Committee may cancel the admission of any student at any stage for gross misconduct
+                    after giving an opportunity of hearing at the appropriate forum.
+                </p>
+                <p>iii. Student who remains absent continuously for four weeks from the date of commencement of classes
+                    without information to the authorities concerned; his/her admission shall stand canceled
+                    automatically without issuing any notice thereof
+                </p>
+                <p>iv. Student who fails to appear in two complete semester examinations consecutively, his/her
+                    admission shall stand canceled without any notice or information.
+                </p>
+                <p>v. In case of any discrepancy or misinterpretation, the decision of the Admission Committee shall be
+                    final and binding on the applicant and shall not be challengeable in the court of Law.
+                </p>
+
+            </div>
+            <h4 class="mt-4" id="one-heading">
+                <b>How to Apply</b>
+
+            </h4>
+            <div style="padding-left: 20px; margin-top: 15px;">
+                <p>Visit University’s Online Admission Portal https.//admission.itechuniversity.edu.pk Create New
+                    Account and get a password for your account.
+                </p>
+                <p>Step 2: Sign In and Complete your application process Guidelines to fill the application form are
+                    provided at each step of the application.
+                </p>
+                <p>Step 3: Fields mentioned or marked with (*) are mandatory to fill, rest are optional.
+                </p>
+                <p>
+                    Step 4: Download your challan form once application is completed.
+
+                </p>
+                <p>Step 5: Deposit Challan Fee to any branch of Allied Bank Limited.
+                </p>
+                <p>Step 6: Upload a Scanned Copy of Paid Challan on “Admission Portal”.
+                </p>
+                <p>Step 7: Download & Print your Admission Form and send it to University by Courier or Submit by Hand
+                    along with all required documents.
+                </p>
+                <p>Step 8: Also Print your ‘Admit Card’ generated automatically after uploading Valid Fee Challan.
+                </p>
+                <p>Step 9: Report at the venue on the given time and date as shown on your ‘Admit Card’. Please note
+                    that you will not be allowed to sit in Entry Test without ‘Printed Admit Card’ and original CNIC or
+                    B-Form under any circumstances.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="logo.png" alt="iTech University" class="footer-logo">
+                    </a>
+                    <p class="mt-3">iTech University is dedicated to excellence in teaching, learning, and research, and
+                        to developing leaders in numerous disciplines who make a difference globally.</p>
+                </div>
+
+                <div class="col-md-3 text-center footer-contact">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <p><i class="fas fa-map-marker-alt mt-2 pl-2"></i> iTech University Blue Area <br>Islamabad
+                        Punjab, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@itechuniversity.com</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5 class="text-uppercase text-center">Subscribe to our Newsletter</h5>
+                    <form class="d-flex flex-column">
+                        <input type="email" class="form-control mb-2" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-outline-light">Subscribe</button>
+                    </form>
+                    <h5 class="mt-4 text-uppcercase text-center">Follow Us</h5>
+                    <div class="social-icons text-center">
+                        <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://web.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2 footer-links">
+                <div class="col-md-12 text-center">
+                    <a href="index.html">Home</a> |
+                    <a href="iTech University.html">About Us</a> |
+                    <a href="Undergraduate Programs.html">Undergraduate</a> |
+                    <a href="Masters Programs.html">Masters</a> |
+                    <a href="Ph.D Programs.html">Ph.D</a> |
+                    <a href="Contact Us.html">Contact Us</a> |
+                    <a href="Admission form.html">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p> Copyright &copy; 2024 iTech University. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const dropdownItems = document.querySelectorAll('.dropdown-submenu > a');
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const nextDropdown = this.nextElementSibling;
+                if (nextDropdown) {
+                    nextDropdown.classList.toggle('show');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
